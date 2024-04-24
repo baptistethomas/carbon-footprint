@@ -1,4 +1,5 @@
 import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { isEmpty } from '../../shared/utils/stringUtils';
 
 @Entity("carbon_emission_factors")
 export class CarbonEmissionFactor extends BaseEntity {
@@ -27,7 +28,7 @@ export class CarbonEmissionFactor extends BaseEntity {
   source: string;
 
   sanitize() {
-    if (this.source === "") {
+    if(isEmpty(this.source)){
       throw new Error("Source cannot be empty");
     }
   }

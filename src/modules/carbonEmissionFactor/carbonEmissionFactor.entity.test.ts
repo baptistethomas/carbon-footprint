@@ -1,5 +1,5 @@
-import { GreenlyDataSource, dataSource } from "../../config/dataSource";
-import { CarbonEmissionFactor } from "../carbonEmissionFactor/carbonEmissionFactor.entity";
+import { CarbonEmissionFactor } from "./carbonEmissionFactor.entity";
+import { dataSource, GreenlyDataSource } from '../../../config/dataSource';
 
 let chickenEmissionFactor: CarbonEmissionFactor;
 beforeAll(async () => {

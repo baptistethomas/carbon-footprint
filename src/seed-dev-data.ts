@@ -1,5 +1,5 @@
 import { dataSource } from "../config/dataSource";
-import { CarbonEmissionFactor } from "./carbonEmissionFactor/carbonEmissionFactor.entity";
+import { CarbonEmissionFactor } from "./modules/carbonEmissionFactor/carbonEmissionFactor.entity";
 
 export const TEST_CARBON_EMISSION_FACTORS = [
   {

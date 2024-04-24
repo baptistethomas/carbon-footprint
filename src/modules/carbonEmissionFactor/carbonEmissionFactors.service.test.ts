@@ -1,11 +1,11 @@
-import { GreenlyDataSource, dataSource } from "../../config/dataSource";
-import { getTestEmissionFactor } from "../seed-dev-data";
 import { CarbonEmissionFactor } from "./carbonEmissionFactor.entity";
 import { CarbonEmissionFactorsService } from "./carbonEmissionFactors.service";
+import { getTestEmissionFactor } from '../../seed-dev-data';
+import { dataSource, GreenlyDataSource } from '../../../config/dataSource';
 
 let flourEmissionFactor = getTestEmissionFactor("flour");
 let hamEmissionFactor = getTestEmissionFactor("ham");
-let olivedOilEmissionFactor = getTestEmissionFactor("oliveOil");
+let oliveOilEmissionFactor = getTestEmissionFactor("oliveOil");
 let carbonEmissionFactorService: CarbonEmissionFactorsService;
 
 beforeAll(async () => {
@@ -19,7 +19,7 @@ beforeEach(async () => {
   await GreenlyDataSource.cleanDatabase();
   await dataSource
     .getRepository(CarbonEmissionFactor)
-    .save(olivedOilEmissionFactor);
+    .save(oliveOilEmissionFactor);
 });
 
 describe("CarbonEmissionFactors.service", () => {
